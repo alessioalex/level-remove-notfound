@@ -1,0 +1,28 @@
+{
+  "name": "level-remove-notfound",
+  "version": "0.0.1",
+  "description": "levelUp.get won't callback with notFoundError anymore, instead (null, null)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --ui bdd --recursive --reporter spec --timeout 10000 --slow 300"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alessioalex/level-remove-notfound.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "async"  : "0.2.x",
+    "level"  : "0.16.x",
+    "mocha"  : "1.13.x",
+    "should" : "1.3.x"
+  },
+  "keywords": [
+    "level",
+    "leveldb",
+    "notfound"
+  ],
+  "author": "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
+  "license": "MIT"
+}
