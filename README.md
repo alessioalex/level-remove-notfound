@@ -2,15 +2,17 @@
 
 In case you don't want level.get(key) to return an error in case key doesn't exist. https://github.com/rvagg/node-levelup#dbgetkey-options-callback
 
+[![build status] (https://secure.travis-ci.org/alessioalex/level-remove-notfound.png)] (http://travis-ci.org/alessioalex/level-remove-notfound)
+
 ## Example
 
 ```js
 var level  = require('level'),
     assert = require('assert'),
-    removeNotFound = require('level-remove-notfound'),
+    get    = require('level-remove-notfound'),
     db;
 
-db = removeNotFound(level('/tmp/' + Date.now() + '.db'));
+db = get.install(level('/tmp/' + Date.now() + '.db'));
 
 db.get('foo', function(err, val) {
   assert.equal(err, null, 'error should be null');
@@ -26,6 +28,17 @@ db.get('foo', function(err, val) {
   });
 });
 ```
+
+## API
+
+### get(db, key, [levelUpOptions], cb)
+
+Get a value in `db` without receiving `notFoundError` in case that value doesn't exist.
+
+### get.install(db)
+### db#get(key, [levelUpOptions], cb)
+
+Install `level-remove-notfound` onto the `db`.
 
 ## Installation
 

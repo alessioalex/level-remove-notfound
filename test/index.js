@@ -63,7 +63,44 @@ describe('level-remove-notfound', function() {
     });
   });
 
-  describe('#install', function() {
+  describe('#get', function() {
+    var dbPath, db, key;
+
+    before(function(done) {
+      dbPath = '/tmp/' + Date.now() + '.db';
+      db     = level(dbPath);
+      key    = 'testkey';
+      done();
+    });
+
+    after(function(done) {
+      db.close(function(err) {
+        try {
+          fs.unlinkSync(dbPath);
+        }
+        catch(err) { }
+        done();
+      });
+    });
+
+    it("should return notFound with native get", function(done) {
+      db.get(Date.now() + Date.now(), function(err, val) {
+        err.should.be.an.Error;
+        err.should.have.property('notFound');
+        done();
+      });
+    });
+
+    it("should not return notFound with #get", function(done) {
+      lib.get(db, Date.now() + Date.now(), function(err, val) {
+        should.not.exist(err);
+        should.not.exist(val);
+        done();
+      });
+    });
+  });
+
+  describe('#get.install', function() {
     var dbPath, db, key;
 
     before(function(done) {

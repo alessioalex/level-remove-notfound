@@ -1,6 +1,6 @@
 {
   "name": "level-remove-notfound",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "levelUp.get won't callback with notFoundError anymore, instead (null, null)",
   "main": "index.js",
   "scripts": {

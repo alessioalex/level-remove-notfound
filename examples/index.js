@@ -1,9 +1,9 @@
 var level  = require('level'),
     assert = require('assert'),
-    removeNotFound = require('../'),
+    get    = require('../'),
     db;
 
-db = removeNotFound(level('/tmp/' + Date.now() + '.db'));
+db = get.install(level('/tmp/' + Date.now() + '.db'));
 
 db.get('foo', function(err, val) {
   assert.equal(err, null, 'error should be null');
