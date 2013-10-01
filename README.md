@@ -1,6 +1,6 @@
 # level-remove-notfound
 
-In case you don't want level.get(key) to return an error in case key doesn't exist. https://github.com/rvagg/node-levelup#dbgetkey-options-callback
+In case you don't want level.get(key) to return an error in case [key doesn't exist](https://github.com/rvagg/node-levelup#dbgetkey-options-callback).
 
 [![build status] (https://secure.travis-ci.org/alessioalex/level-remove-notfound.png)] (http://travis-ci.org/alessioalex/level-remove-notfound)
 
